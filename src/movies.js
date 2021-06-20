@@ -22,7 +22,8 @@ function howManyMovies(arr) {
 
 // Iteration 3: All scores average - Get the average of all scores with 2 decimals
 function scoresAverage(arr) {
-  let resultString = arr.reduce((sum, { score }) => sum + score, 0);
+  let cleanArr = arr.filter((value) => Object.keys(value).length !== 0);
+  let resultString = cleanArr.reduce((sum, { score }) => sum + score, 0);
   let resultDecimalNumber = Number(resultString);
   let numberOfMoviesTotal = arr.length;
   if (numberOfMoviesTotal === 0) return 0;
